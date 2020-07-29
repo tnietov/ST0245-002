@@ -12,12 +12,10 @@ public class Fecha {
     
 
     /*
-
     varibales con atributo final indican que una variable es de tipo 
     constante, es decir, no admitirá cambios después de su declaración y asignación de valor.
     final determina que un atributo no puede ser sobreescrito o redefinido.
     Se le asigna esta característica para evitar que se sobrescriban valores.
-
     tener en cuenta tipado de las 3 variables!.
     */
 
@@ -29,8 +27,10 @@ public class Fecha {
     /**
      * Se inicializan las variables globales en el constructor de manera que no posean valores nulos o 0s.
      */
-    public Fecha() {
-
+    public Fecha(int dia, int mes, int anyo) {
+        this.dia=dia;
+        this.mes=mes;
+        this.anyo=anyo;
     }
 
     /**
@@ -39,7 +39,7 @@ public class Fecha {
      * @return el dia
      */
     public int dia() {
-
+        return this.dia;
     }
 
     /**
@@ -48,7 +48,7 @@ public class Fecha {
      * @return el mes
      */
     public int mes() {
-
+        return this.mes;
     }
 
     /**
@@ -56,8 +56,8 @@ public class Fecha {
      *
      * @return el año
      */
-    public int anio() {
-
+    public int anyo() {
+        return this.anyo;
     }
 
     /**
@@ -73,7 +73,29 @@ public class Fecha {
     */
 
     public int comparar(Fecha otra) {
-
+        int resultado;
+        if(otra.anyo==this.anyo)
+            {if(otra.mes==this.mes)
+                {if(otra.dia==this.dia)
+                    {resultado=0;}
+                    else{
+                        if(otra.dia>this.dia)
+                            {resultado=-1;}
+                        else{resultado=1;}
+                    }
+                }
+                else{
+                    if(otra.mes>this.mes)
+                        {resultado=-1;}
+                    else{resultado=1;}
+                }
+        }
+        else{
+            if(otra.anyo>this.anyo)
+                {resultado=-1;}
+            else{resultado=1;}
+        }
+        return resultado;
     }
 
 
@@ -84,6 +106,8 @@ public class Fecha {
     * @return una cadena que contiene la fecha
     */
     public String toString() {
-        
+        String txt;
+        txt=anyo+"/"+mes+"/"+dia;
+        return txt;
     }
 }
