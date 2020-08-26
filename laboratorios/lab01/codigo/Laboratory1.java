@@ -1,4 +1,10 @@
 public class Laboratory1 {
+    / Title: Isabella Quintero, Sofia Vega
+     Author: Mauricio Toro 
+     Date: 23/08/2020
+     Code version: 1.0
+     Availability: https://github.com/mauriciotoro/ST0245-Eafit/tree/master/laboratorios/lab01/codigo_estudiante/codigo/java
+    /
     
     /**
      * This method calculates the longest common sequence between two strings
